@@ -9,7 +9,9 @@ import ProjectShowPage from '../pages/projects/show';
 
 
 export const appRoute = [
-    { path: '', element: <HomePage /> },
+    {
+        path: '', element: <HomePage />
+    },
     {
         path: 'projects',
         children: [

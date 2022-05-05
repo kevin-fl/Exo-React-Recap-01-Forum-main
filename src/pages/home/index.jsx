@@ -1,21 +1,18 @@
-import axios from 'axios';
+import News from '../news/news';
 import forum from './forum.jpg';
 import style from './home.module.css';
 
 const HomePage = () => {
-    axios.get('http://localhost:8080/api/news')
-        .then(({ data }) => {
-            console.log(data);
-        }).catch(() => {
-            // dispatch(userSendError());
-        });
+
     return (<>
-        <h1>Accueil</h1>
-        <p>Bienvenue sur le forum</p>
+        <h1>Bienvenue sur mon portfolio</h1>
         <div className={style.forumImage}>
             <img src={forum} alt='forum' />
         </div>
+        <News />
     </>);
 };
 
 export default HomePage;
+
+

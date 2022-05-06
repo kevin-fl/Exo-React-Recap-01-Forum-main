@@ -6,6 +6,9 @@ import RegisterPage from '../pages/register';
 import ProjectPage from '../pages/projects';
 import ProjectCreatePage from '../pages/projects/create';
 import ProjectShowPage from '../pages/projects/show';
+import Admin from '../pages/admin/admin';
+import AdminProjects from '../pages/admin/admin-projects';
+import AdminProject from '../pages/admin/admin-project';
 
 
 export const appRoute = [
@@ -35,7 +38,26 @@ export const appRoute = [
     {
         path: 'login', element: <LoginPage />
     },
-    { path: '*', element: <Error404 /> },
+    {
+        path: 'admin',
+        children: [
+            {
+                index: true, element: <Admin />
+            },
+            {
+                path: 'projects',
+                children: [
+                    {
+                        index: true, element: <AdminProjects />
+                    },
+                    {
+                        path: ':id', element: <AdminProject />
+                    }
+                ]
+            }
+        ]
+    },
+    { path: '*', element: <Error404 /> }
 ];
 
 

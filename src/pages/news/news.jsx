@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const News = () => {
 
@@ -8,9 +9,9 @@ const News = () => {
     useEffect(() => {
         axios.get('http://localhost:8080/api/news')
             .then(
-                (requestData) => {
+                ({ data }) => {
                     // console.log(requestData)
-                    setNews(requestData.data.rows);
+                    setNews(data.rows);
                 }
             );
     }, []);
@@ -20,8 +21,9 @@ const News = () => {
             <li key={singleNews.id}>
                 <div>{singleNews.name}</div>
                 <div>{singleNews.category}</div>
-                <div><img src={`/${singleNews.Image}`} alt={singleNews.name} /></div>
+                <div><img width=" 300" src={`/${singleNews.Image}`} alt={singleNews.name} /></div>
             </li>
+
         )
     );
 
@@ -34,6 +36,7 @@ const News = () => {
             <ul>
                 {newsJsx}
             </ul>
+
 
         </>
 

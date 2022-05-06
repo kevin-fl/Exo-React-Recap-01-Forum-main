@@ -12,7 +12,7 @@ const CommentForm = ({ projectId, request }) => {
             }
         })
             .then(response => {
-                request();
+                request(response);
             });
     };
 

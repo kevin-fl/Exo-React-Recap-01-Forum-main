@@ -10,6 +10,10 @@ const ProjectShowPage = () => {
     const recupeTtLesParams = useParams();
     const id = recupeTtLesParams.id;
     useEffect(() => {
+        requestProject();
+    }, []);
+
+    const requestProject = () => {
         axios.get(`http://localhost:8080/api/project/${id}`)
             .then(
                 (donnees) => {
@@ -21,8 +25,7 @@ const ProjectShowPage = () => {
                     setErrorMessage(message);
                 }
             );
-    }, []);
-
+    };
     console.log(currentProject);
 
     const renderComments = (comments) => {
@@ -41,7 +44,7 @@ const ProjectShowPage = () => {
                         <img src={`/${currentProject && currentProject.image}`} alt={currentProject && currentProject.name} />
                         <h2>Commentaires</h2>
                         <ul>{renderComments(currentProject.commentaires)}</ul>
-                        <CommentForm />
+                        <CommentForm request={requestProject} projectId={id} />
                     </>
                     :
                     <h1>Loading ...</h1>

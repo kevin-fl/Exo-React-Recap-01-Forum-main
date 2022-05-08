@@ -1,11 +1,23 @@
-.forumImage {
+
+.homeImage {
     border-radius: 20px;
+    font-size: 2rem;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 50px;
 }
 
-.forumImage>img {
-    height: 100%;
-    width: 100%;
+.homeImage>img {
+    height: 70%;
+    width: 70%;
     object-fit: cover;
-    display: block;
+}
+
+
+.news{
+    text-align: center;
+    font-size: 2rem;
+
 }

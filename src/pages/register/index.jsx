@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import { useRedirectLogUser } from '../../hooks/redirect-hook';
 import { userRegister } from '../../store/actions/user-action';
 
+//↓ validation du schema register , elements requis et definis 
 const registerSchema = yup.object({
     pseudo: yup.string().trim().required(),
     email: yup.string().trim().email().required(),
@@ -39,6 +40,7 @@ const RegisterPage = () => {
     return (<>
         <h1>Register</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
+            {/* ↑recup les donnees du onsubmit avec l affichage  */}
             <Stack gap='20px'>
                 <Controller
                     render={({ field }) =>

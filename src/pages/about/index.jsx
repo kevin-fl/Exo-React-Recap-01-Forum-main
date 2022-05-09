@@ -3,9 +3,12 @@ import style from "./about.module.css";
 
 const AboutPage = () => {
 
+    //permet l affichage sur la page about de 2 lien . 
+    // on a un style.baniere_btn pour styliser les boutons . 
     return (
     <>
        {/* <h1 className={style.aboutTitle}></h1> */}
+        
         
         <div class={style.baniere_btn}>
             <a href="#"><span></span>EXPERIENCE </a>

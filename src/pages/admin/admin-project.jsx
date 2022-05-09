@@ -30,6 +30,8 @@ const AdminProject = () => {
         console.log(data);
     };
 
+    //creation d un formulaire coté admin pour edit les projets 
+
     return (
         <>
             <p>Project Edit</p>

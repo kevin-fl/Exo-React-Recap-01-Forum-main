@@ -2,6 +2,8 @@ import { createAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
+//permet d utiliser le usertoken(bearertoken) pour une fois ceci charger , soit via const user login accepter ou pas le login en fonction de l identifiant et du password 
+
 export const userToken = createAction('user/token', ({ token, expire }) => {
     const { pseudo, isAdmin } = jwtDecode(token);
     return {
@@ -29,7 +31,7 @@ export const userLogin = ({ identifier, password }) => {
             });
     };
 };
-
+//↓meme chose mais pour la page register 
 export const userRegister = ({ pseudo, email, password }) => {
     return (dispatch) => {
         axios.post('http://localhost:8080/api/auth/register', { pseudo, email, password })

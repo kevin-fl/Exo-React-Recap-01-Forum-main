@@ -7,16 +7,19 @@ import { useEffect } from 'react';
 import { userClearError, userLogin } from '../../store/actions/user-action';
 import { useRedirectAdmin, useRedirectLogUser } from '../../hooks/redirect-hook';
 
+//react hook form frameworks pour construire des formulaires en react
+//yup c est une bibliotheque pour valider la structure des donnees .
 const loginSchema = yup.object({
     login: yup.string().trim().required(),
     password: yup.string().required(),
 }).required();
 
+//↑ on veut que le login soit de type string sans espace et est un champ obligatoire 
 
 const LoginPage = () => {
     useRedirectAdmin();
     useRedirectLogUser();
-
+//on crée un useeffect qui va utiliser le usedispatch pour verif que le login page est respecter 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(userClearError);
@@ -30,11 +33,11 @@ const LoginPage = () => {
         resolver: yupResolver(loginSchema),
         reValidateMode: 'onSubmit'
     });
-
+//crée une const onSubmit avec les 2 attributs login et password dans un objet , alors affiche via dispatch le login et password du user .
     const onSubmit = ({ login, password }) => {
         dispatch(userLogin({ identifier: login, password }));
     };
-
+//↓return un formulaire creant un event handlesubmit sur la logique plus haut .
     return (
         <>
             <h1>Login</h1>

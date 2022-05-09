@@ -10,7 +10,7 @@ import Admin from '../pages/admin/admin';
 import AdminProjects from '../pages/admin/admin-projects';
 import AdminProject from '../pages/admin/admin-project';
 
-
+// ↓export de toutes les routes disponibles ↑import de toutes les pages pour assurer la cohesion .
 export const appRoute = [
     {
         path: '', element: <HomePage />

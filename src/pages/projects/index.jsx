@@ -2,7 +2,7 @@ import axios from "axios";
 import style from "./project.module.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import image from "./dev.png";
 
 const ProjectPage = () => {
 
@@ -16,8 +16,8 @@ const ProjectPage = () => {
                     (project) => (
                         <Link to={{ pathname: `./${project.id}` }} key={project.id}>
                             <li className={style.projectTitle}>
-                                <div>{project.name}</div>
-                                <div>{project.text}</div>
+                                {/* <div>{project.name}</div> */}
+                                {/* <div>{project.text}</div> */}
                                 <div><img width="200" src={`./${project.image}`} alt={project.name} /></div>
                             </li>
                         </Link >
@@ -29,8 +29,11 @@ const ProjectPage = () => {
 
     return (
         <>
-            <h1 className={style.pageTitle}>projects</h1>
-            <ul>{projects}</ul>
+
+            <div className={style.pageTitle}>
+                <img src={image} alt="image" />
+            </div>
+            <ul className={style.ul}>{projects}</ul>
         </>
     );
 };

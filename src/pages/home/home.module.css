@@ -1,23 +1,40 @@
 
 .homeImage {
-    border-radius: 20px;
-    font-size: 2rem;
+    border-radius: 10px;
+    font-size: rem;
+    height: 500px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-shadow: 50px;
+    /* background:url("projectbase.png"); */
+    /* max-width: 100%; */
+    /* text-shadow: 50px; */
+    /* background: url(hey.png) no-repeat center center fixed; */
+    
 }
 
 .homeImage>img {
     height: 70%;
     width: 70%;
-    object-fit: cover;
+    object-fit: cover no repeat;
 }
 
 
 .news{
     text-align: center;
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    
+}
+
+.news>ul>li{
+    
+    list-style-type: none;
+
 
 }

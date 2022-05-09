@@ -2,10 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useRedirectAdmin } from "../../hooks/redirect-hook-admin";
+import { useRedirectNotAdmin } from "../../hooks/redirect-hook";
+import style from "./admin.module.css";
 
 const AdminProjects = () => {
-    useRedirectAdmin();
+    useRedirectNotAdmin();
     const user = useSelector(state => state.user);
     console.log(user);
     const [projects, setProjects] = useState([]);
@@ -42,9 +43,9 @@ const AdminProjects = () => {
                 <div>
                     <span>{project.id} - {project.name}</span>
                     <Link to={`./${project.id}`}>
-                        <span>Edit</span>
+                        <span className={style.button}><button>Edit</button></span>
                     </Link>
-                    <span onClick={() => { projectDelete(project.id); }}>Delete</span>
+                    <button onClick={() => { projectDelete(project.id); }}>Delete</button>
                 </div>
             </li>
         )
@@ -53,7 +54,7 @@ const AdminProjects = () => {
     return (
         <>
             {projectsJSX}
-            <button>Add New</button>
+            <button className={style.addNew}>Add New</button>
         </>
     );
 };

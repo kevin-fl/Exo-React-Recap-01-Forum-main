@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useRedirectAdmin } from "../../hooks/redirect-hook-admin";
+import { useRedirectNotAdmin } from "../../hooks/redirect-hook";
 
 const Admin = () => {
-    useRedirectAdmin();
+    useRedirectNotAdmin();
 
     return (
         <>

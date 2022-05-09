@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CommentForm from "../comment-form/comment-form";
+import CommentForm from "../../components/comment-form/comment-form";
 
 const ProjectShowPage = () => {
     const [currentProject, setCurrentProject] = useState();

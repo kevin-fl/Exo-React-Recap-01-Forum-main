@@ -31,8 +31,7 @@ const News = () => {
 
     return (
         <>
-            <h2>NEWS</h2>
-            <p>Hello World</p>
+
             <ul>
                 {newsJsx}
             </ul>

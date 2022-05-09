@@ -7,8 +7,30 @@ export const useRedirectLogUser = () => {
     const user = useSelector(state => state.user);
 
     useEffect(() => {
-        if (user.token) {
+        if (user.token && user.isAdmin === false) {
             navigate('/');
+        }
+    });
+};
+
+export const useRedirectNotAdmin = () => {
+    const navigate = useNavigate();
+    const user = useSelector(state => state.user);
+
+    useEffect(() => {
+        if (user.isAdmin === null) {
+            navigate('/');
+        }
+    });
+};
+
+export const useRedirectAdmin = () => {
+    const navigate = useNavigate();
+    const user = useSelector(state => state.user);
+
+    useEffect(() => {
+        if (user.isAdmin) {
+            navigate('/admin');
         }
     });
 };

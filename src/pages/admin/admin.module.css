@@ -1,0 +1,14 @@
+.button {
+
+    display: flex;
+    flex-direction: row; 
+    margin-top: 10px;
+    padding: 1px;
+
+}
+
+.addNew{
+    padding: 10px;
+    margin-top: 10px;
+    /* border-radius: 10px ; */
+}

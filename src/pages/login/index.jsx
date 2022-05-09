@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { userClearError, userLogin } from '../../store/actions/user-action';
-import { useRedirectLogUser } from '../../hooks/redirect-hook';
+import { useRedirectAdmin, useRedirectLogUser } from '../../hooks/redirect-hook';
 
 const loginSchema = yup.object({
     login: yup.string().trim().required(),
@@ -14,7 +14,7 @@ const loginSchema = yup.object({
 
 
 const LoginPage = () => {
-
+    useRedirectAdmin();
     useRedirectLogUser();
 
     const dispatch = useDispatch();

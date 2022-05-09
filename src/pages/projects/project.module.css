@@ -1,7 +1,10 @@
 .pageTitle {
-    color: blue;
+    color: black;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    position: relative;
+    z-index: 2;
+
 }
 
 .projectTitle {
@@ -9,3 +12,30 @@
     
 }
 
+.ul{
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+margin-top:-70px ;
+/* justify-content: center;  */
+height:400px;
+font-size: 1.2rem;
+flex-wrap: wrap;
+justify-content: space-between;
+font-size: 100px;
+overflow: hidden; 
+transition: 1.5s;
+position: relative;
+z-index: 1;
+
+}
+
+.ul:hover{
+transform: scale(1.2);
+background-color: white;
+}
+
+.imageproject{
+ display: flex;
+ padding: 100px;
+}
